@@ -62,11 +62,12 @@ vercel --prod
 1. **Substitua o ID do produto:**
    ```javascript
    // Em client/src/js/main.js, linha 44
-   window.location.href = 'https://pay.kiwify.com.br/SEU_ID';
+   window.location.href = 'https://pay.kiwify.com.br/oQppxrj';
    ```
 
 2. **Configure o redirecionamento pós-pagamento:**
    - URL de retorno: `https://seu-dominio.vercel.app?status=pago`
+   - **Sales Page:** https://kiwify.app/tJMJEZm
 
 ## 📁 **Estrutura do Projeto**
 

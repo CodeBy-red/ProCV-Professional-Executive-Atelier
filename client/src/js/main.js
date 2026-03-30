@@ -41,7 +41,7 @@ function setupPaymentButton() {
     if (actionBtn) {
         actionBtn.textContent = 'LIBERAR ACESSO EXECUTIVO';
         actionBtn.onclick = () => {
-            window.location.href = 'https://pay.kiwify.com.br/SEU_ID';
+            window.location.href = 'https://pay.kiwify.com.br/oQppxrj';
         };
         actionBtn.classList.remove('btn-unlocked');
     }
