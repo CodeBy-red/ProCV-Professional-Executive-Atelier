@@ -1,0 +1,29 @@
+{
+  "name": "procv-professional-executive-atelier",
+  "version": "1.0.0",
+  "description": "ProCV - Professional Executive Atelier - Sistema de criação de currículos executivos com monetização Kiwify",
+  "main": "client/index.html",
+  "scripts": {
+    "start": "npx http-server client -p 3000",
+    "dev": "npx http-server client -p 3000 -o",
+    "build": "echo 'Build completed - Static files ready for deployment'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "cv",
+    "curriculum",
+    "executive",
+    "professional",
+    "kiwify",
+    "monetization",
+    "resume-builder"
+  ],
+  "author": "CodeBy-red",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
