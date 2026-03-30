@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProCV | The Executive Atelier</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dark-luxury">
+    <div class="grain-overlay"></div>
+
+    <header class="navbar">
+        <div class="logo">PRO<span>CV</span></div>
+        <div class="nav-actions">
+            <div class="status-indicator">MODO EXECUTIVO</div>
+            <button class="btn-gold-glow" onclick="window.print()">
+                REVELAR DOCUMENTO
+            </button>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <section class="editor-side">
+            <div class="luxury-card">
+                <label class="gold-label">IDENTIFICAÇÃO</label>
+                <div class="input-group">
+                    <input type="text" id="in-name" placeholder="NOME COMPLETO" oninput="updatePreview()">
+                    <input type="text" id="in-role" placeholder="CARGO ALMEJADO" oninput="updatePreview()">
+                    <div class="row">
+                        <input type="email" id="in-email" placeholder="E-MAIL" oninput="updatePreview()">
+                        <input type="tel" id="in-phone" placeholder="TELEFONE" oninput="updatePreview()">
+                    </div>
+                    <input type="text" id="in-linkedin" placeholder="LINKEDIN (URL)" oninput="updatePreview()">
+                </div>
+            </div>
+
+            <div class="luxury-card">
+                <label class="gold-label">PERFIL PROFISSIONAL</label>
+                <textarea id="in-summary" rows="3" placeholder="Sua síntese de valor..." oninput="updatePreview()"></textarea>
+            </div>
+
+            <div class="luxury-card">
+                <div class="card-header">
+                    <label class="gold-label">EXPERIÊNCIA</label>
+                    <button class="btn-add-gold" onclick="addItem('exp')">+ ADICIONAR REGISTRO</button>
+                </div>
+                <div id="list-exp"></div>
+            </div>
+
+            <div class="luxury-card">
+                <div class="card-header">
+                    <label class="gold-label">FORMAÇÃO</label>
+                    <button class="btn-add-gold" onclick="addItem('edu')">+ ADICIONAR GRAU</button>
+                </div>
+                <div id="list-edu"></div>
+            </div>
+
+            <div class="luxury-card">
+                <label class="gold-label">HABILIDADES ELITE</label>
+                <input type="text" id="in-skills" placeholder="SEPARE POR VÍRGULAS..." oninput="updatePreview()">
+            </div>
+        </section>
+
+        <section class="preview-side">
+            <div id="cv-document" class="cv-page-dark">
+                <div class="gold-frame"></div>
+                
+                <header class="cv-header-pv">
+                    <h1 id="pv-name">SEU NOME</h1>
+                    <p id="pv-role">CARGO EXECUTIVO</p>
+                </header>
+
+                <div class="cv-contact-bar">
+                    <span id="pv-email">contato@procv.com</span> • 
+                    <span id="pv-phone">+55 11 00000-0000</span> • 
+                    <span id="pv-linkedin">linkedin.com/in/perfil</span>
+                </div>
+
+                <div class="cv-body-pv">
+                    <div class="cv-section">
+                        <h2 class="cv-title-gold">Síntese Profissional</h2>
+                        <p id="pv-summary">Sua trajetória apresentada com clareza absoluta.</p>
+                    </div>
+
+                    <div class="cv-section">
+                        <h2 class="cv-title-gold">Histórico de Carreira</h2>
+                        <div id="pv-list-exp"></div>
+                    </div>
+
+                    <div class="cv-section">
+                        <h2 class="cv-title-gold">Educação Superior</h2>
+                        <div id="pv-list-edu"></div>
+                    </div>
+
+                    <div class="cv-section">
+                        <h2 class="cv-title-gold">Expertise Técnica</h2>
+                        <p id="pv-skills">Seus diferenciais competitivos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="src/js/main.js"></script>
+    <script src="src/js/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+:root {
+    --nero: #050505;
+    --charcoal: #121212;
+    --gold: #D4AF37;
+    --gold-mute: #8E793E;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Font Calibri: Fallback para fontes sans-serif corporativas se não instalada localmente */
+body { 
+    background: var(--nero); 
+    color: #fff; 
+    font-family: 'Calibri', 'Candara', 'Segoe UI', 'Optima', sans-serif; 
+}
+
+.grain-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.03; pointer-events: none; z-index: 1000;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(5,5,5,0.95); padding: 1.5rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(212,175,55,0.2); position: sticky; top:0; z-index:100;
+}
+.logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; letter-spacing: 5px; color: #fff; }
+.logo span { color: var(--gold); }
+
+.btn-gold-glow {
+    background: var(--gold); color: var(--nero); border: none; padding: 12px 25px;
+    font-weight: 800; font-size: 0.7rem; letter-spacing: 2px; cursor: pointer;
+}
+
+/* App Layout */
+.app-container {
+    display: grid; grid-template-columns: 460px 1fr; gap: 60px;
+    padding: 50px 5%; max-width: 1500px; margin: 0 auto;
+}
+
+/* Editor Cards */
+.luxury-card { background: var(--charcoal); padding: 30px; margin-bottom: 25px; border: 1px solid #1a1a1a; }
+.gold-label { color: var(--gold); font-size: 0.6rem; letter-spacing: 3px; font-weight: 700; display: block; margin-bottom: 15px; }
+
+input, textarea {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid #222;
+    padding: 12px 0; color: #fff; font-family: inherit; outline: none; margin-bottom: 10px; font-size: 0.9rem;
+}
+input:focus { border-bottom: 1px solid var(--gold); }
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+.btn-add-gold { background: none; border: 1px solid var(--gold-mute); color: var(--gold-mute); padding: 5px 12px; font-size: 0.6rem; cursor: pointer; letter-spacing: 1px; }
+
+/* Estilo do Botão "Atual" */
+.current-toggle {
+    display: flex; align-items: center; gap: 8px; font-size: 0.7rem; color: var(--gold-mute);
+    cursor: pointer; margin-top: -5px; margin-bottom: 10px;
+}
+.current-toggle input { width: auto; margin: 0; }
+
+/* Preview do Currículo (Papel A4 com Calibri) */
+.preview-side { display: flex; justify-content: center; position: sticky; top: 110px; height: fit-content; }
+.cv-page-dark {
+    background: #fff; color: #111; width: 595px; min-height: 842px; padding: 60px;
+    position: relative; box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+}
+.gold-frame { position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; border: 1px solid rgba(212,175,55,0.15); pointer-events: none; }
+
+.cv-header-pv h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; text-align: center; letter-spacing: 4px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+#pv-role { font-size: 0.9rem; letter-spacing: 5px; color: var(--gold-mute); text-align: center; margin-top: 15px; text-transform: uppercase; }
+
+.cv-contact-bar { text-align: center; font-size: 0.75rem; color: #777; margin: 15px 0 35px 0; }
+
+.cv-title-gold { 
+    font-size: 0.9rem; font-weight: 800; text-transform: uppercase; color: #000; 
+    letter-spacing: 2px; border-bottom: 1.5px solid var(--gold); padding-bottom: 3px; margin: 25px 0 12px 0; 
+}
+
+.pv-item { margin-bottom: 15px; }
+.pv-item h4 { font-size: 1.05rem; font-weight: 700; color: #000; }
+.pv-item span { font-size: 0.8rem; color: var(--gold-mute); font-weight: 600; text-transform: uppercase; }
+
+/* Marca d'água em grade (pattern) - Nível Máximo de Proteção */
+.watermark-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 80px,
+        rgba(212, 175, 55, 0.1) 80px,
+        rgba(212, 175, 55, 0.1) 160px
+    ),
+    repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 80px,
+        rgba(212, 175, 55, 0.08) 80px,
+        rgba(212, 175, 55, 0.08) 160px
+    );
+    pointer-events: none; z-index: 10;
+    overflow: hidden;
+}
+
+.watermark-overlay::before {
+    content: "PROCV - ACESSO BLOQUEADO";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 100px,
+        currentColor 100px,
+        currentColor 105px
+    );
+    color: rgba(212, 175, 55, 0.15);
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    transform: rotate(-45deg) translateX(-50px) translateY(-50px);
+    transform-origin: center;
+    white-space: nowrap;
+    line-height: 100px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Efeito de desfoque para conteúdo bloqueado */
+.cv-body-pv.blurred {
+    filter: blur(1.5px);
+    transition: filter 0.3s ease;
+}
+
+/* Estado desbloqueado - remoção de todos os efeitos */
+.cv-body-pv.unlocked {
+    filter: none !important;
+}
+
+.watermark-overlay.hidden {
+    display: none !important;
+}
+
+/* Animação de brilho dourado para botão desbloqueado */
+@keyframes goldGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+    50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.9); }
+}
+
+.btn-unlocked {
+    animation: goldGlow 2s ease-in-out infinite;
+}
+
+@media print {
+    .navbar, .editor-side, .grain-overlay { display: none !important; }
+    body { background: white; }
+    .cv-page-dark { box-shadow: none; border: none; width: 100%; height: 100%; margin: 0; padding: 40px; }
+}
